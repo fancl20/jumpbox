@@ -1,5 +1,13 @@
 { config, pkgs, ... }:
 {
+  fileSystems = {
+     "/root" = {
+      depends = [ "/" ];
+      device = "/root";
+      options = [ "bind" "ro" "noatime" ];
+    };
+  };
+
   users = {
     mutableUsers = true;
     users.nixos = {
