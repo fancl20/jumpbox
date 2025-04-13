@@ -9,7 +9,7 @@
   };
 
   users = {
-    mutableUsers = true;
+    mutableUsers = false;
     users.nixos = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];
