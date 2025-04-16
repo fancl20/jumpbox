@@ -4,6 +4,7 @@
     ./system/hardware.nix
     ./system/users.nix
     ./system/network.nix
+    ./system/os.nix
 
     ./users/nixos.nix
   ];

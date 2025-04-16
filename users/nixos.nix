@@ -15,7 +15,7 @@
   users.users.nixos = {
       shell = pkgs.fish;
       packages = with pkgs; [
-        dnsutils
+        dnsutils python3Minimal ansible
         google-cloud-sdk talosctl fluxcd terraform kubectl _1password-cli
       ];
   };
