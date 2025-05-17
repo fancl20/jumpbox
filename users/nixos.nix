@@ -12,10 +12,13 @@
       user = { name = "fancl20"; email = "fancl20@gmail.com"; };
     };
   };
+  environment.variables = {
+    KUBE_CONFIG_PATH = "${config.users.users.nixos.home}/.kube/config";
+  };
   users.users.nixos = {
       shell = pkgs.fish;
       packages = with pkgs; [
-        dnsutils python3Minimal ansible
+        dnsutils python3Full ansible
         google-cloud-sdk talosctl fluxcd terraform kubectl _1password-cli
       ];
   };
