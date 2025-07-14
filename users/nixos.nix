@@ -20,6 +20,9 @@
       packages = with pkgs; [
         dnsutils python3Full ansible
         google-cloud-sdk talosctl fluxcd terraform kubectl _1password-cli
+        (pkgs.writeShellScriptBin "ceph" ''
+          kubectl --namespace=rook-ceph exec -it deploy/rook-ceph-tools -- ceph "$@"
+        '')
       ];
   };
 }
