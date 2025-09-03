@@ -15,7 +15,7 @@
   networking.hostName = "jumpbox";
   services.openssh.enable = true;
 
-  time.timeZone = "Australias/Sydney";
+  time.timeZone = "Australia/Sydney";
 
   environment.systemPackages = [
     (pkgs.writeShellScriptBin "nixos-configure" ''
