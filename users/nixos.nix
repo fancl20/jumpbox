@@ -19,7 +19,7 @@
       shell = pkgs.fish;
       packages = with pkgs; [
         dnsutils python3 ansible go-jsonnet
-        google-cloud-sdk talosctl fluxcd terraform kubectl _1password-cli velero
+        tpi google-cloud-sdk talosctl fluxcd terraform kubectl _1password-cli velero
         (pkgs.writeShellScriptBin "ceph" ''
           kubectl --namespace=rook-ceph exec -it deploy/rook-ceph-tools -- ceph "$@"
         '')
