@@ -18,8 +18,18 @@
   users.users.nixos = {
       shell = pkgs.fish;
       packages = with pkgs; [
-        dnsutils python3 ansible go-jsonnet
+        dnsutils python3 ansible go-jsonnet envsubst
         tpi google-cloud-sdk talosctl fluxcd terraform kubectl _1password-cli velero
+        (pkgs.vim-full.customize {
+          name = "vim";
+          vimrcConfig.customRC = ''
+            syntax enable
+            set expandtab
+            set tabstop=2
+            set shiftwidth=2
+            set softtabstop=2
+          '';
+        })
         (pkgs.writeShellScriptBin "ceph" ''
           kubectl --namespace=rook-ceph exec -it deploy/rook-ceph-tools -- ceph "$@"
         '')
