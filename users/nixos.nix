@@ -18,7 +18,7 @@
   users.users.nixos = {
       shell = pkgs.fish;
       packages = with pkgs; [
-        dnsutils python3 ansible go-jsonnet envsubst
+        dnsutils python3 uv go-jsonnet envsubst
         tpi google-cloud-sdk talosctl fluxcd terraform kubectl _1password-cli velero
         (pkgs.vim-full.customize {
           name = "vim";
