@@ -4,6 +4,7 @@
      "/root" = {
       depends = [ "/" ];
       device = "/root";
+      fsType = "none";
       options = [ "bind" "ro" "noatime" ];
     };
   };
